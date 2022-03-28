@@ -1,24 +1,29 @@
 import logo from './logo.svg';
 import './App.css';
+import SearchBoxForm from './components/SearchBoxForm';
+import ResultBoard from './components/ResultBoard';
+// import { useEffect, useState } from "react";
+import {useState} from "react";
 
 function App() {
+  const [link, setLink] = useState('');
+  const [type, setType] = useState([]);
+  const [rhymeResults, setRhymeResults] = useState([]);
+
+  // console.log("link", link)
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <main className="i-am-main">
+        <h1>Rhyme Finders - PS6</h1>
+        <SearchBoxForm setRhymeResults={setRhymeResults} setLink={setLink} setType={setType}/>
+        <div>
+          <ResultBoard 
+            setRhymeResults={setRhymeResults}
+            rhymeResults={rhymeResults}
+            searchLink={link}
+            linkType={type}
+          />
+        </div>
+    </main>
   );
 }
 
