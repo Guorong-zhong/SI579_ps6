@@ -14,6 +14,7 @@ function App() {
   return (
     <main className="i-am-main">
         <h1>Rhyme Finders - PS6</h1>
+        <h2><a href='https://github.com/Guorong-zhong/SI579_ps6_sourcecode'>Source Code Repo</a></h2>
         <SearchBoxForm setRhymeResults={setRhymeResults} setLink={setLink} setType={setType}/>
         <div>
           <ResultBoard 
